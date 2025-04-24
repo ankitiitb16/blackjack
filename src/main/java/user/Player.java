@@ -1,5 +1,6 @@
 package user;
 
+import model.Card;
 import model.Hand;
 
 public abstract class Player {
@@ -10,8 +11,8 @@ public abstract class Player {
     private Person person;
     private Hand hand;
 
-    public void addHand(Hand hand){
-        this.hand = hand;
+    public void addHand(Card card1, Card card2){
+        this.hand = new Hand(card1, card2);
     }
 
     public void removeHand(Hand hand){
@@ -20,4 +21,11 @@ public abstract class Player {
         }
     }
 
+    public void addCardToHand(Card card){
+        hand.addCard(card);
+    }
+
+    public boolean resetPassword(){
+        return true;
+    }
 }
