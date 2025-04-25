@@ -6,6 +6,10 @@ import java.util.List;
 public class Hand {
     List<Card> cards;
 
+    public Hand() {
+        cards = new ArrayList<>();
+    }
+
     public Hand(Card card1, Card card2) {
         cards = new ArrayList<>();
         cards.add(card1);
@@ -30,5 +34,9 @@ public class Hand {
 
     public void addCard (Card card){
         cards.add(card);
+    }
+
+    public List<Card> getCards() {
+        return cards;
     }
 }

@@ -1,8 +1,9 @@
 package user;
 
+import lombok.Data;
 import model.Card;
 import model.Hand;
-
+@Data
 public abstract class Player {
     private String id;
     private String password;
@@ -10,6 +11,10 @@ public abstract class Player {
     private AccountStatus accountStatus;
     private Person person;
     private Hand hand;
+
+    public Player() {
+        this.hand = new Hand();
+    }
 
     public void addHand(Card card1, Card card2){
         this.hand = new Hand(card1, card2);
@@ -27,5 +32,9 @@ public abstract class Player {
 
     public boolean resetPassword(){
         return true;
+    }
+
+    public Hand getHand() {
+        return hand;
     }
 }

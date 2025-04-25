@@ -17,4 +17,9 @@ public class Card {
     public int getFaceValue() {
         return faceValue;
     }
+
+    @Override
+    public String toString(){
+        return suit.toString()+" of "+ faceValue;
+    }
 }
